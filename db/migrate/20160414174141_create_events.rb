@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :name
       t.text :detail
-      t.date :date
+      t.date :schedule
       t.string :place
       t.boolean :delete
       t.boolean :close
