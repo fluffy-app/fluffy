@@ -12,14 +12,15 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  reconnect: false
   pool: 5
-  username: root
-  password:
   host: localhost
 
 development:
   <<: *default
   database: fluffy_development
+  username: testuser
+  password: +e5+pa55w0rD
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +28,8 @@ development:
 test:
   <<: *default
   database: fluffy_test
+  username: testuser
+  password: +e5+pa55w0rD
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
