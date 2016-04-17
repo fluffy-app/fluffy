@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414174218) do
+ActiveRecord::Schema.define(version: 20160417171824) do
 
   create_table "chats", force: :cascade do |t|
     t.text     "comment",    limit: 65535
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20160414174218) do
     t.integer  "gender",           limit: 4
     t.integer  "age",              limit: 4
     t.string   "address",          limit: 255
-    t.boolean  "delete",           limit: 1
+    t.boolean  "hide",             limit: 1
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
