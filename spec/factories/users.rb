@@ -7,6 +7,6 @@ FactoryGirl.define do
     gender 1
     age 1
     address "MyString"
-    delete false
+    delete_flag false
   end
 end

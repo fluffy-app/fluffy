@@ -10,7 +10,7 @@
 #  gender           :integer
 #  age              :integer
 #  address          :string(255)
-#  delete           :boolean
+#  delete_flag      :boolean
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
