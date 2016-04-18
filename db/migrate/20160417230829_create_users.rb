@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :gender
       t.integer :age
       t.string :address
-      t.boolean :delete
+      t.boolean :delete_flag
 
       t.timestamps null: false
     end

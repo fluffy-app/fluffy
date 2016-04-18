@@ -2,16 +2,16 @@
 #
 # Table name: things
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  passion    :integer
-#  schedule   :date
-#  delete     :boolean
-#  image_path :string(255)
-#  close      :boolean
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string(255)
+#  passion       :integer
+#  schedule_date :date
+#  delete_flag   :boolean
+#  image_path    :string(255)
+#  close_flag    :boolean
+#  user_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 # Indexes
 #

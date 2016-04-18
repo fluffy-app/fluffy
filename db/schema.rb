@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414174218) do
+ActiveRecord::Schema.define(version: 20160417230923) do
 
   create_table "chats", force: :cascade do |t|
     t.text     "comment",    limit: 65535
@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 20160414174218) do
   add_index "chats", ["user_id"], name: "index_chats_on_user_id", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "detail",     limit: 65535
-    t.date     "schedule"
-    t.string   "place",      limit: 255
-    t.boolean  "delete",     limit: 1
-    t.boolean  "close",      limit: 1
-    t.integer  "thing_id",   limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",          limit: 255
+    t.text     "detail",        limit: 65535
+    t.date     "schedule_date"
+    t.string   "place",         limit: 255
+    t.boolean  "delete_flag",   limit: 1
+    t.boolean  "close_flag",    limit: 1
+    t.integer  "thing_id",      limit: 4
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "events", ["thing_id"], name: "index_events_on_thing_id", using: :btree
@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 20160414174218) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "me_toos", force: :cascade do |t|
-    t.integer  "passion",    limit: 4
-    t.boolean  "accepted",   limit: 1
-    t.boolean  "delete",     limit: 1
-    t.integer  "thing_id",   limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "passion",       limit: 4
+    t.boolean  "accepted_flag", limit: 1
+    t.boolean  "delete_flag",   limit: 1
+    t.integer  "thing_id",      limit: 4
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "me_toos", ["thing_id"], name: "index_me_toos_on_thing_id", using: :btree
@@ -100,15 +100,15 @@ ActiveRecord::Schema.define(version: 20160414174218) do
   add_index "thing_tags", ["thing_id"], name: "index_thing_tags_on_thing_id", using: :btree
 
   create_table "things", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.integer  "passion",    limit: 4
-    t.date     "schedule"
-    t.boolean  "delete",     limit: 1
-    t.string   "image_path", limit: 255
-    t.boolean  "close",      limit: 1
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "title",         limit: 255
+    t.integer  "passion",       limit: 4
+    t.date     "schedule_date"
+    t.boolean  "delete_flag",   limit: 1
+    t.string   "image_path",    limit: 255
+    t.boolean  "close_flag",    limit: 1
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "things", ["user_id"], name: "index_things_on_user_id", using: :btree
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20160414174218) do
     t.integer  "gender",           limit: 4
     t.integer  "age",              limit: 4
     t.string   "address",          limit: 255
-    t.boolean  "delete",           limit: 1
+    t.boolean  "delete_flag",      limit: 1
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

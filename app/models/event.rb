@@ -2,17 +2,17 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  detail     :text(65535)
-#  schedule   :date
-#  place      :string(255)
-#  delete     :boolean
-#  close      :boolean
-#  thing_id   :integer
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  detail        :text(65535)
+#  schedule_date :date
+#  place         :string(255)
+#  delete_flag   :boolean
+#  close_flag    :boolean
+#  thing_id      :integer
+#  user_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 # Indexes
 #
