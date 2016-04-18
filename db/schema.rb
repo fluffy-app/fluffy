@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20160417171824) do
     t.integer  "gender",           limit: 4
     t.integer  "age",              limit: 4
     t.string   "address",          limit: 255
-    t.boolean  "hide",             limit: 1
+    t.boolean  "delete_flag",      limit: 1
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
