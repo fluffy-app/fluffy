@@ -1,3 +1,277 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+main .inner {
+  position: relative;
+}
+.main_content {
+  width: 920px;
+  height: 800px;
+  float: left;
+  position: relative;
+}
+
+.addBtn {
+  width: 178px;
+  height: 36px;
+  background: #f48540;
+  border-radius: 18px;
+  box-shadow:2px 2px 3px 0px #ffffff inset,-2px -2px 3px 0px #ed6518 inset;
+  line-height: 36px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding-left: 16px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -89px;
+  box-sizing: border-box;
+}
+.addBtn:before {
+  content: "+";
+  line-height: 20px;
+  color: #f48540;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -10px;
+}
+.user_info {
+  width: 162px;
+  height: 162px;
+  background: #54c6ad;
+  border-radius: 50%;
+  border: 4px solid #54c6ad;
+  position: absolute;
+  left: 50%;
+  top: 180px;
+  margin-left: -81px;
+  box-sizing: border-box;
+  overflow: hidden;
+  .user_info__name {
+    color: #000;
+    position: relative;
+    z-index: 10;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+}
+.user_info:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  background: image-url("tsuzuki.jpg") 90% 90px #fff;
+  background-size: contain;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20%;
+  left: -50%;
+  box-sizing: border-box;
+}
+
+.thingsList .thingsList__li.metoo_5{
+  width: 234px;
+  height: 234px;
+  position: absolute;
+  left: 160px;
+  top: 40px;
+  border: 5px solid #fff;
+  animation-duration: 5s;
+  animation-delay: -1s;
+  .thingsList__title {
+    font-size: 14px;
+    line-height: 20px;
+    top: 80px;
+  }
+}
+.thingsList .thingsList__li.metoo_4{
+  width: 212px;
+  height: 212px;
+  position: absolute;
+  left: 700px;
+  top: 80px;
+  border: 4px solid #fff;
+  animation-duration: 4s;
+  animation-delay: -3s;
+  .thingsList__title {
+    top: 70px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+}
+.thingsList .thingsList__li.metoo_3{
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  border: 4px solid #fff;
+  animation-duration: 4s;
+  animation-delay: -1s;
+  .thingsList__title {
+    font-size: 12px;
+    line-height: 18px;
+    top: 65px;
+  }
+}
+.thingsList .thingsList__li.metoo_2{
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  left: 700px;
+  top: 340px;
+  border: 3px solid #fff;
+  animation-duration: 3s;
+  animation-delay: -2s;
+  .thingsList__title {
+    font-size: 12px;
+    line-height: 16px;
+    top: 46px;
+  }
+}
+.thingsList .thingsList__li.metoo_1{
+  width: 60px;
+  height: 60px;
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  left: 500px;
+  top: 380px;
+  animation-duration: 2s;
+  animation-delay: -2s;
+  &:before {
+    content: "";
+    display: none;
+  }
+  &:after {
+    content: "";
+    display: none;
+  }
+  .thingsList__title {
+    display: none;
+  }
+  .thingsList__subText {
+    display: none;
+  }
+}
+.thingsList__li {
+  width: 162px;
+  height: 162px;
+  background: #fff;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+  margin-left: -81px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0px 0px 1px 1px #efefef;
+
+  animation-duration: 4s;
+  animation-name: moveElem;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  .thingsList__title {
+    position: absolute;
+    top: 60px;
+    z-index: 10;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    text-align: center;
+  }
+  .thingsList__subText {
+    position: absolute;
+    bottom: 4px;
+    z-index: 10;
+    width: 100%;
+    color: #f48540;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+.thingsList__li:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, #54c6ae 30%,#5245bb 80%);
+  background-size: contain;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20%;
+  left: -50%;
+  box-sizing: border-box;
+}
+.thingsList__li:after {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  background: image-url("tsuzuki.jpg") 90% 90px #fff;
+  background-size: contain;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20%;
+  left: -50%;
+  box-sizing: border-box;
+  opacity: .2;
+}
+
+@keyframes moveElem {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(4px,6px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+
+.sideList {
+  .sideList_li + .sideList_li {
+    margin-top: 1px;
+  }
+  .sideList_a {
+    width: 160px;
+    line-height: 36px;
+    display: block;
+    background: #fff;
+    border: 2px solid #54c6ad;
+    border-radius: 4px;
+    color: #54c6ad;
+    font-size: 14px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  .sideList_a.active {
+    background: #54c6ad;
+    color: #fff;
+  }
+}
+.sidebar {
+  // position: absolute;
+  // top: 10px;
+  // right: 0;
+  padding-top: 20px;
+  display: block;
+  width: 160px;
+  margin: 0 0 0 auto;
+}

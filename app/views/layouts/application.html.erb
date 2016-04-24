@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Fluffy</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="wrapper">
+      <header class="header">
+        <div class="flex inner">
+          <ul class="headerNav">
+            <li class="headerNav__li"><a class="headerNav__a" href="#">ホーム</a></li>
+            <li class="headerNav__li"><a class="headerNav__a" href="#">お気に入りユーザーリスト</a></li>
+            <li class="headerNav__li"><a class="headerNav__a" href="#">やりたいこと保留中リスト</a></li>
+            <li class="headerNav__li"><a class="headerNav__a" href="#">通知</a></li>
+          </ul>
+          <!-- <div class="flex align">
+            <form action="">
+              <input type="text" placeholder="キーワード検索">
+            </form>
+          </div> -->
+          <ul class="headerSubNav flex align">
+            <li class="headerSubNav_li">
+              <form action="">
+                <input type="text" placeholder="キーワード検索">
+              </form>
+            </li>
+            <li class="headerSubNav_li"><a class="headerSubNav_a" href="#">設定</a></li>
+            <li class="headerSubNav_li"><a class="headerSubNav_a" href="#">ログアウト</a></li>
+          </ul>
+        </div>
+      </header>
+      <%= yield %>
+  </div>
 </body>
 </html>

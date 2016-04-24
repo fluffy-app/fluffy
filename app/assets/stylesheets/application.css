@@ -13,3 +13,88 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ body {
+   background: #f0f8f4;
+   font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+ }
+ ul {
+   list-style-type: none;
+ }
+ a {
+   text-decoration: none;
+ }
+.inner {
+  width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+#wrapper {
+}
+.header {
+  height: 50px;
+  background: #54c6ad;
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  height: 50px;
+}
+.align {
+  align-items: center;
+}
+
+.header .headerNav__a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.headerNav {
+  display: flex;
+  list-style-type: none;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 50px;
+}
+.headerNav .headerNav__li {
+  margin-right: 30px;
+}
+.headerNav .headerSubNav_a {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.headerSubNav {
+  position: absolute;
+  right: 0;
+}
+.headerSubNav .headerSubNav_li {
+  margin-right: 20px;
+}
+.headerSubNav .headerSubNav_a {
+  font-size: 12px;
+  line-height: 20px;
+}
+.header input[type=text] {
+  height: 30px;
+  width: 200px;
+}
+.header a {
+  color: #fff;
+
+}
+
+.headerSubNav {
+  margin-left: 20px;
+}
+.headerSubNav_li {
+  margin-left: 20px;
+}
