@@ -21,5 +21,22 @@ class User < ActiveRecord::Base
   has_many :chats
   has_many :me_toos
   has_many :favorites
+  has_many :user_tags, :foreign_key => :user_id, :primary_key => :id
   has_many :tags, :through => :user_tags
+
+  # 内部結合 things
+  scope :with_things, lambda {
+    joins(:things)
+  }
+
+  # 内部結合 user_tags
+  scope :with_user_tags, lambda {
+    joins(:user_tags)
+  }
+
+  # 内部結合 tags
+  scope :with_tags, lambda {
+    joins(:tags)
+  }
+
 end

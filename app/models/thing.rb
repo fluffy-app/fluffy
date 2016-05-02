@@ -28,5 +28,32 @@ class Thing < ActiveRecord::Base
   has_many :chats
   has_many :posts
   has_many :me_toos
+  has_many :thing_tags, :foreign_key => :thing_id, :primary_key => :id
   has_many :tags, :through => :thing_tags
+
+  validates :user_id, presence: true
+
+  # 内部結合 user
+  scope :with_user, lambda {
+    joins(:user)
+  }
+
+  # 内部結合 thing_tags
+  scope :with_thing_tags, lambda {
+    joins(:thing_tags)
+  }
+
+  # 内部結合 thing_tags、tags
+  scope :with_tags, lambda {
+    joins(:tags)
+  }
+
+  scope :latest, lambda {
+    order(created_at: :desc)
+  }
+
+  scope :oldest, lambda {
+    order(created_at: :asc)
+  }
+
 end

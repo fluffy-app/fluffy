@@ -20,6 +20,6 @@
 #
 
 class ThingTag < ActiveRecord::Base
-  belongs_to :thing
-  belongs_to :tag
+  belongs_to :thing, :foreign_key => :thing_id
+  belongs_to :tag, :foreign_key => :tag_id
 end
