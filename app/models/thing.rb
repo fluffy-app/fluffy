@@ -38,6 +38,12 @@ class Thing < ActiveRecord::Base
     joins(:user)
   }
 
+  # 外部結合 user
+  # joinsと組合せると内部結合した上で結合先テーブルも取得する
+  scope :with_user_eager_load, lambda {
+    eager_load(:user)
+  }
+
   # 内部結合 thing_tags
   scope :with_thing_tags, lambda {
     joins(:thing_tags)
@@ -46,6 +52,12 @@ class Thing < ActiveRecord::Base
   # 内部結合 thing_tags、tags
   scope :with_tags, lambda {
     joins(:tags)
+  }
+
+  # 外部結合 tags
+  # joinsと組合せると内部結合した上で結合先テーブルも取得する
+  scope :with_tags_eager_load, lambda {
+    eager_load(:tags)
   }
 
   scope :latest, lambda {

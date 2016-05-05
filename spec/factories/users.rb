@@ -22,16 +22,12 @@ FactoryGirl.define do
   end
 
   trait :with_thing do
-
     transient do
       things_count 5
     end
-
     after(:create) do |user, evaluator|
       create_list(:thing, evaluator.things_count, user: user)
     end
   end
-
-  factory :user_with_thing,    traits: [:user, :with_thing]
 
 end

@@ -44,4 +44,27 @@ FactoryGirl.define do
   trait :with_test_user_name_change do
     association :user, factory: :test_user, name: "user_name_change"
   end
+
+  trait :with_tag do
+    after(:create) do |thing, evaluator|
+      create(:thing_tag, thing: thing, tag: create(:tag))
+    end
+  end
+
+  factory :thing_with_tag, class: Thing do
+    title "title_thing_with_tag"
+    passion 1
+    schedule_date "2016-04-18"
+    delete_flag false
+    image_path "MyString"
+    close_flag false
+    association :user, factory: :user
+
+    trait :with_tag do
+      after(:create) do |thing, evaluator|
+        create(:thing_tag, thing: thing, tag: create(:tag))
+      end
+    end
+  end
+
 end

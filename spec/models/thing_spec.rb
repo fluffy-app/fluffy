@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Thing, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # pending "add some examples to (or delete) #{__FILE__}"
 
-  describe 'FactoryGirlを使用してthingが生成される事の確認' do
+  describe 'thingが生成される事' do
     it 'is valid' do
       thing = FactoryGirl.create(:thing)
       expect(thing).to be_valid
     end
   end
 
-  describe 'FactoryGirlを使用してthing経由でuserが生成される事の確認_1' do
+  describe 'thingに紐付くuserが生成される事' do
     it 'is valid' do
       thing = FactoryGirl.create(:thing)
       user = thing.user
@@ -18,7 +18,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'FactoryGirlを使用してthing経由でuserが生成される事の確認_2 user.name確認' do
+  describe 'thingに紐付くuserが想定通りである事' do
     it 'is valid' do
       thing = FactoryGirl.create(:thing)
       user = thing.user
@@ -26,7 +26,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'FactoryGirlを使用してthing経由でuserが生成される事の確認_3 trait使用_1' do
+  describe 'thingに紐付くuserが生成される事' do
     it 'is valid' do
       thing = FactoryGirl.create(:thing, :with_user)
       user = thing.user
@@ -34,7 +34,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'FactoryGirlを使用してthing経由でuserが生成される事の確認_4 trait使用_2' do
+  describe 'thingに紐付くuserが生成される事' do
     it 'is valid' do
       thing = FactoryGirl.create(:test_thing, :with_test_user)
       user = thing.user
@@ -42,7 +42,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'FactoryGirlを使用してthing経由でuserが生成される事の確認_5 trait使用_3' do
+  describe 'thingに紐付くuserが生成される事' do
     it 'is valid' do
       thing = FactoryGirl.create(:test_thing, :with_test_user_name_change)
       user = thing.user
@@ -50,7 +50,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'FactoryGirlを使用してthingが生成される事の確認 紐付くuserなし' do
+  describe 'thingに紐付くuserが生成されない事' do
     it 'is not valid' do
       # 紐付くuserなしのためbuildで確認する
       thing = FactoryGirl.build(:thing, :without_user)
@@ -58,7 +58,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'Userが紐付かない場合、エラーになる事の確認' do
+  describe 'thingに紐付くuserがない場合、エラーになる事' do
     it 'is not valid' do
       thing = FactoryGirl.create(:thing)
       thing.user = nil
@@ -66,7 +66,7 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'scope:with_userの確認 Userが紐付くThingが1件存在する事' do
+  describe 'scope:with_user thingに紐付くuserが1件存在する事' do
     it 'is valid' do
       thing = FactoryGirl.create(:test_thing, :with_test_user)
       things = Thing.with_user.where(id: thing.id)
@@ -75,14 +75,147 @@ RSpec.describe Thing, type: :model do
     end
   end
 
-  describe 'scope:with_userの確認 Userが紐付くThingが想定通りである事' do
+  describe 'scope:with_user thingに紐付くuserが想定通りである事' do
     it 'is valid' do
       thing = FactoryGirl.create(:test_thing, :with_test_user)
       things = Thing.with_user.where(id: thing.id)
-      # thingに紐付くuserは必ず1件存在する
       expect(things.size).to eq(1)
       things.each do |thing|
         expect(thing.title).to eq('test_title')
+      end
+    end
+  end
+
+  describe 'thingからassociationによりuserが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:test_thing, :with_test_user)
+      things = Thing.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        user = thing.user
+        Rails.logger.debug("### user: #{user.inspect}")
+        expect(user).to be_valid
+      end
+    end
+  end
+
+  describe 'scope:with_user_eager_load thingとuserの外部結合の結果が取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:test_thing, :with_test_user)
+      things = Thing.with_user_eager_load.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        user = thing.user
+        Rails.logger.debug("### user: #{user.inspect}")
+        expect(user).to be_valid
+      end
+    end
+  end
+
+  describe 'scope:with_user、with_user_eager_loadの組合せ thingとuserの内部結合の結果が取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:test_thing, :with_test_user)
+      things = Thing.with_user.with_user_eager_load.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        user = thing.user
+        Rails.logger.debug("### user: #{user.inspect}")
+        expect(user).to be_valid
+      end
+    end
+  end
+
+  describe 'thingからassociationによりtagが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        tags = thing.tags
+        expect(tags.size).to eq(1)
+        tags.each do |tag|
+          Rails.logger.debug("### tag: #{tag.inspect}")
+          expect(tag).to be_valid
+        end
+      end
+    end
+  end
+
+  describe 'scope:with_tags thingに紐付くtagが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.with_tags.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        thing.tags.each do |tag|
+          Rails.logger.debug("### tag: #{tag.inspect}")
+          expect(tag).to be_valid
+        end
+      end
+    end
+  end
+
+  describe 'scope:with_tags_eager_load thingに紐付くtagが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.with_tags_eager_load.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        thing.tags.each do |tag|
+          Rails.logger.debug("### tag: #{tag.inspect}")
+          expect(tag).to be_valid
+        end
+      end
+    end
+  end
+
+  describe 'scope:with_tags、with_tags_eager_loadの組合せ thingとtagの内部結合の結果が取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.with_tags.with_tags_eager_load.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        thing.tags.each do |tag|
+          Rails.logger.debug("### tag: #{tag.inspect}")
+          expect(tag).to be_valid
+        end
+      end
+    end
+  end
+
+  describe 'thingからassociationによりthing_tagが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        thing_tags = create_thing.thing_tags
+        expect(thing_tags.size).to eq(1)
+        thing_tags.each do |thing_tag|
+          Rails.logger.debug("### thing_tag: #{thing_tag.inspect}")
+          expect(thing_tag).to be_valid
+        end
+      end
+    end
+  end
+
+  describe 'scope:with_thing_tags thingに紐付くthing_tagが取得できる事' do
+    it 'is valid' do
+      create_thing = FactoryGirl.create(:thing_with_tag, :with_tag)
+      things = Thing.with_thing_tags.where(id: create_thing.id)
+      expect(things.size).to eq(1)
+      things.each do |thing|
+        Rails.logger.debug("### thing: #{thing.inspect}")
+        thing.thing_tags.each do |thing_tag|
+          Rails.logger.debug("### thing_tag: #{thing_tag.inspect}")
+          expect(thing_tag).to be_valid
+        end
       end
     end
   end

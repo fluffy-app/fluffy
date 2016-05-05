@@ -26,7 +26,7 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
-# rspecでログ出力　非表示にする場合はコメントアウト
+# # rspecでログ出力　非表示にする場合はコメントアウト
 # Rails.logger = Logger.new(STDOUT)
 # ActiveRecord::Base.logger = Logger.new(STDOUT)
 
