@@ -25,8 +25,15 @@ class User < ActiveRecord::Base
   has_many :tags, :through => :user_tags
 
   # 内部結合 things
+  # 単独で使用した場合は結合先テーブルは取得しない
   scope :with_things, lambda {
     joins(:things)
+  }
+
+  # 外部結合 things
+  # joinsと組合せると内部結合した上で結合先テーブルも取得する
+  scope :with_things_eager_load, lambda {
+    eager_load(:things)
   }
 
   # 内部結合 user_tags
