@@ -1,0 +1,102 @@
+<main class="listView">
+
+  <div class="content clearfix">
+    <div class="main_content">
+      <section class="userBg">
+        <div class="userBg__inner">
+          <div class="userImg">
+            <%= image_tag("userImgSample01.jpg", :class => "userImg__img") %>
+            <p class="userImg__name">
+              <span class="userImg__name_span">鈴木 祐依</span>
+            </p>
+          </div>
+          <ul class="viewChangeBtn">
+            <li class="viewChangeBtn_li"></li>
+            <li class="viewChangeBtn_li"></li>
+          </ul>
+          <div class="chatIcon"></div>
+        </div>
+      </section>
+      <div class="inner borderTopWhite">
+        <!-- <div class="user_info">
+          <img src="/app/assets/images/Tsuzuki.jpg" alt="">
+          <p class="user_info__name"><%= @user.name %></p>
+        </div> -->
+        <section class="sec01">
+          <ul class="thingsList">
+            <li class="thingsList__li clearfix">
+              <div class="thingsList__li_child thingsList__li_child_title">
+                <div class="addBtn">やりたいことを追加</div>
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_passion">
+                <span class="thingsList__li_child_header sort">
+                  やりたい度
+                </span>
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_schedule_date">
+                <span class="thingsList__li_child_header sort">
+                  時期
+                </span>
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_metoo">
+                <span class="thingsList__li_child_header sort">
+                  わたしも！
+                </span>
+              </div>
+            </li>
+            <% @user.things.each do |thing| %>
+            <li class="thingsList__li clearfix">
+              <div class="thingsList__li_child thingsList__li_child_title">
+                <%= thing.title %>
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_passion">
+                <% stars = '' %>
+                <% thing.passion.times do %>
+                <% stars += '★' %>
+                <% end %>
+                <% if stars == '' then %>
+                未設定
+                <% else %>
+                <%= stars %>
+                <% end %>
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_schedule_date">
+                <% if !thing.schedule_date then %>
+                未定
+                <% else %>
+                <%= thing.schedule_date %>
+                <% end %>
+
+              </div>
+              <div class="thingsList__li_child thingsList__li_child_metoo">
+                <%# binding.pry %>
+                <%#= thing.me_toos.length %>
+                <% if thing.me_toos.length == 0 then %>
+                only me
+                <% else %>
+                <%= thing.me_toos.length %>
+                <% end %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </div>
+      <!-- <sidebar class="sidebar">
+        <ul class="sideList">
+          <li class="sideList_li">
+            <a href="" class="sideList_a active">やりたい度が高い</a>
+          </li>
+          <li class="sideList_li">
+            <a href="" class="sideList_a">時期が近い</a>
+          </li>
+          <li class="sideList_li">
+            <a href="" class="sideList_a">metooが多い</a>
+          </li>
+        </ul>
+      </sidebar> -->
+    </div>
+
+  </div>
+</main>
+<%= javascript_include_tag(:all) %>

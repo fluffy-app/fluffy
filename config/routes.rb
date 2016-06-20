@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'user/mypage/:id' => 'users#mypage'
+  get 'user/mypage/list/:id' => 'users#mypage_list'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

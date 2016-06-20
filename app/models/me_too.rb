@@ -16,11 +16,6 @@
 #  index_me_toos_on_thing_id  (thing_id)
 #  index_me_toos_on_user_id   (user_id)
 #
-# Foreign Keys
-#
-#  fk_rails_039813a9d5  (thing_id => things.id)
-#  fk_rails_56f8015a4f  (user_id => users.id)
-#
 
 class MeToo < ActiveRecord::Base
   belongs_to :thing

@@ -13,11 +13,6 @@
 #  index_user_tags_on_tag_id   (tag_id)
 #  index_user_tags_on_user_id  (user_id)
 #
-# Foreign Keys
-#
-#  fk_rails_7156651ad8  (tag_id => tags.id)
-#  fk_rails_ea0382482a  (user_id => users.id)
-#
 
 class UserTag < ActiveRecord::Base
   belongs_to :user, :foreign_key => :user_id
