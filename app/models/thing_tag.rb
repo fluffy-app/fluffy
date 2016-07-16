@@ -13,11 +13,6 @@
 #  index_thing_tags_on_tag_id    (tag_id)
 #  index_thing_tags_on_thing_id  (thing_id)
 #
-# Foreign Keys
-#
-#  fk_rails_861d8b15e4  (tag_id => tags.id)
-#  fk_rails_8ced5dddbb  (thing_id => things.id)
-#
 
 class ThingTag < ActiveRecord::Base
   belongs_to :thing, :foreign_key => :thing_id

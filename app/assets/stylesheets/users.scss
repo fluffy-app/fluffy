@@ -1,277 +1,577 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-main .inner {
-  position: relative;
+/* Place all the styles related to the users controller here.*/
+/* They will automatically be included in application.css.*/
+/* You can use Sass (SCSS) here: http://sass-lang.com/*/
+/* main .inner {*/
+/*   position: relative;*/
+/* }*/
+/* .main_content {*/
+/*   width: 920px;*/
+/*   height: 800px;*/
+/*   float: left;*/
+/*   position: relative;*/
+/* }*/
+/**/
+/* // .addBtn {*/
+/* //   width: 178px;*/
+/* //   height: 36px;*/
+/* //   background: #f48540;*/
+/* //   border-radius: 18px;*/
+/* //   box-shadow:2px 2px 3px 0px #ffffff inset,-2px -2px 3px 0px #ed6518 inset;*/
+/* //   line-height: 36px;*/
+/* //   color: #fff;*/
+/* //   font-size: 14px;*/
+/* //   text-align: center;*/
+/* //   padding-left: 16px;*/
+/* //   position: absolute;*/
+/* //   top: 120px;*/
+/* //   left: 50%;*/
+/* //   margin-left: -89px;*/
+/* //   box-sizing: border-box;*/
+/* // }*/
+/* // .addBtn:before {*/
+/* //   content: "+";*/
+/* //   line-height: 20px;*/
+/* //   color: #f48540;*/
+/* //   display: block;*/
+/* //   width: 20px;*/
+/* //   height: 20px;*/
+/* //   position: absolute;*/
+/* //   top: 50%;*/
+/* //   left: 10px;*/
+/* //   background: #fff;*/
+/* //   border-radius: 50%;*/
+/* //   margin-top: -10px;*/
+/* // }*/
+/* .user_info {*/
+/*   width: 162px;*/
+/*   height: 162px;*/
+/*   background: #54c6ad;*/
+/*   border-radius: 50%;*/
+/*   border: 4px solid #54c6ad;*/
+/*   position: absolute;*/
+/*   left: 50%;*/
+/*   top: 180px;*/
+/*   margin-left: -81px;*/
+/*   box-sizing: border-box;*/
+/*   overflow: hidden;*/
+/*   .user_info__name {*/
+/*     color: #000;*/
+/*     position: relative;*/
+/*     z-index: 10;*/
+/*     position: absolute;*/
+/*     bottom: 5px;*/
+/*     width: 100%;*/
+/*     text-align: center;*/
+/*     color: #fff;*/
+/*   }*/
+/* }*/
+/* .user_info:before {*/
+/*   content: "";*/
+/*   display: block;*/
+/*   width: 200%;*/
+/*   height: 200%;*/
+/*   background: image-url("tsuzuki.jpg") 90% 90px #fff;*/
+/*   background-size: contain;*/
+/*   border-radius: 50%;*/
+/*   position: absolute;*/
+/*   bottom: 20%;*/
+/*   left: -50%;*/
+/*   box-sizing: border-box;*/
+/* }*/
+/**/
+/* .thingsList .thingsList__li.metoo_5{*/
+/*   width: 234px;*/
+/*   height: 234px;*/
+/*   position: absolute;*/
+/*   left: 160px;*/
+/*   top: 40px;*/
+/*   border: 5px solid #fff;*/
+/*   animation-duration: 5s;*/
+/*   animation-delay: -1s;*/
+/*   .thingsList__title {*/
+/*     font-size: 14px;*/
+/*     line-height: 20px;*/
+/*     top: 80px;*/
+/*   }*/
+/* }*/
+/* .thingsList .thingsList__li.metoo_4{*/
+/*   width: 212px;*/
+/*   height: 212px;*/
+/*   position: absolute;*/
+/*   left: 700px;*/
+/*   top: 80px;*/
+/*   border: 4px solid #fff;*/
+/*   animation-duration: 4s;*/
+/*   animation-delay: -3s;*/
+/*   .thingsList__title {*/
+/*     top: 70px;*/
+/*     font-size: 14px;*/
+/*     line-height: 20px;*/
+/*   }*/
+/**/
+/* }*/
+/* .thingsList .thingsList__li.metoo_3{*/
+/*   width: 190px;*/
+/*   height: 190px;*/
+/*   position: absolute;*/
+/*   left: 200px;*/
+/*   top: 300px;*/
+/*   border: 4px solid #fff;*/
+/*   animation-duration: 4s;*/
+/*   animation-delay: -1s;*/
+/*   .thingsList__title {*/
+/*     font-size: 12px;*/
+/*     line-height: 18px;*/
+/*     top: 65px;*/
+/*   }*/
+/* }*/
+/* .thingsList .thingsList__li.metoo_2{*/
+/*   width: 128px;*/
+/*   height: 128px;*/
+/*   position: absolute;*/
+/*   left: 700px;*/
+/*   top: 340px;*/
+/*   border: 3px solid #fff;*/
+/*   animation-duration: 3s;*/
+/*   animation-delay: -2s;*/
+/*   .thingsList__title {*/
+/*     font-size: 12px;*/
+/*     line-height: 16px;*/
+/*     top: 46px;*/
+/*   }*/
+/* }*/
+/* .thingsList .thingsList__li.metoo_1{*/
+/*   width: 60px;*/
+/*   height: 60px;*/
+/*   font-size: 12px;*/
+/*   line-height: 16px;*/
+/*   position: absolute;*/
+/*   left: 500px;*/
+/*   top: 380px;*/
+/*   animation-duration: 2s;*/
+/*   animation-delay: -2s;*/
+/*   &:before {*/
+/*     content: "";*/
+/*     display: none;*/
+/*   }*/
+/*   &:after {*/
+/*     content: "";*/
+/*     display: none;*/
+/*   }*/
+/*   .thingsList__title {*/
+/*     display: none;*/
+/*   }*/
+/*   .thingsList__subText {*/
+/*     display: none;*/
+/*   }*/
+/* }*/
+/* .thingsList__li {*/
+/*   width: 162px;*/
+/*   height: 162px;*/
+/*   background: #fff;*/
+/*   border-radius: 50%;*/
+/*   border: 4px solid #fff;*/
+/*   position: absolute;*/
+/*   left: 200px;*/
+/*   top: 80px;*/
+/*   margin-left: -81px;*/
+/*   box-sizing: border-box;*/
+/*   overflow: hidden;*/
+/*   box-shadow: 0px 0px 1px 1px #efefef;*/
+/**/
+/*   animation-duration: 4s;*/
+/*   animation-name: moveElem;*/
+/*   animation-timing-function: ease;*/
+/*   animation-iteration-count: infinite;*/
+/*   .thingsList__title {*/
+/*     position: absolute;*/
+/*     top: 60px;*/
+/*     z-index: 10;*/
+/*     width: 100%;*/
+/*     color: #fff;*/
+/*     font-size: 14px;*/
+/*     text-shadow: 1px 1px 1px rgba(0,0,0,.5);*/
+/*     text-align: center;*/
+/*   }*/
+/*   .thingsList__subText {*/
+/*     position: absolute;*/
+/*     bottom: 4px;*/
+/*     z-index: 10;*/
+/*     width: 100%;*/
+/*     color: #f48540;*/
+/*     font-size: 14px;*/
+/*     text-align: center;*/
+/*   }*/
+/* }*/
+/* .thingsList__li:before {*/
+/*   content: "";*/
+/*   display: block;*/
+/*   width: 200%;*/
+/*   height: 200%;*/
+/*   background: linear-gradient(to right, #54c6ae 30%,#5245bb 80%);*/
+/*   background-size: contain;*/
+/*   border-radius: 50%;*/
+/*   position: absolute;*/
+/*   bottom: 20%;*/
+/*   left: -50%;*/
+/*   box-sizing: border-box;*/
+/* }*/
+/* .thingsList__li:after {*/
+/*   content: "";*/
+/*   display: block;*/
+/*   width: 200%;*/
+/*   height: 200%;*/
+/*   background: image-url("tsuzuki.jpg") 90% 90px #fff;*/
+/*   background-size: contain;*/
+/*   border-radius: 50%;*/
+/*   position: absolute;*/
+/*   bottom: 20%;*/
+/*   left: -50%;*/
+/*   box-sizing: border-box;*/
+/*   opacity: .2;*/
+/* }*/
+/**/
+/* @keyframes moveElem {*/
+/*   0% {*/
+/*     transform: translate(0);*/
+/*   }*/
+/*   50% {*/
+/*     transform: translate(4px,6px);*/
+/*   }*/
+/*   100% {*/
+/*     transform: translate(0);*/
+/*   }*/
+/* }*/
+/**/
+/**/
+/**/
+/* .sideList {*/
+/*   .sideList_li + .sideList_li {*/
+/*     margin-top: 1px;*/
+/*   }*/
+/*   .sideList_a {*/
+/*     width: 160px;*/
+/*     line-height: 36px;*/
+/*     display: block;*/
+/*     background: #fff;*/
+/*     border: 2px solid #54c6ad;*/
+/*     border-radius: 4px;*/
+/*     color: #54c6ad;*/
+/*     font-size: 14px;*/
+/*     padding-left: 10px;*/
+/*     box-sizing: border-box;*/
+/*   }*/
+/*   .sideList_a.active {*/
+/*     background: #54c6ad;*/
+/*     color: #fff;*/
+/*   }*/
+/* }*/
+/* .sidebar {*/
+/*   // position: absolute;*/
+/*   // top: 10px;*/
+/*   // right: 0;*/
+/*   padding-top: 20px;*/
+/*   display: block;*/
+/*   width: 160px;*/
+/*   margin: 0 0 0 auto;*/
+/* }*/
+
+
+
+
+/*-------------------listView*/
+.content {
+  padding-bottom: 200px;
 }
-.main_content {
-  width: 920px;
-  height: 800px;
-  float: left;
+.userBg {
+  height: 200px;
+  background: url(/assets/userBgSample01.jpg) center 50%;
+  background-size: cover;
   position: relative;
+
+}
+.userBg:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  background: #01d4b9; /* Old browsers */ /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #01d4b9 0%,#635bff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #01d4b9 0%,#635bff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01d4b9', endColorstr='#635bff',GradientType=1 ); /* IE6-9 */
+  opacity: .75;
+}
+.userBg__inner {
+  width: 1220px;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+.userImg {
+  width: 150px;
+  height: 150px;
+  background: #162b3d;
+  position: absolute;
+  z-index: 10;
+  border-radius: 50%;
+  border: 3px solid #162b3d;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.userImg__img {
+  max-width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+          -webkit-clip-path: circle(100% at 50% -20%);
+                  clip-path: circle(100% at 50% -20%);
+}
+.userImg__name {
+  background: #162b3d;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  // text-align: center;
+}
+.userImg__name_span {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.viewChangeBtn {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+  cursor: pointer;
+}
+.viewChangeBtn_li {
+  width: 40px;
+  height: 30px;
+
+}
+.viewChangeBtn_li:first-child {
+  border-right: 1px solid #e3e3e3;
+  background: url(/assets/viewChangeIcon01.jpg) no-repeat center center #fff;
+}
+.viewChangeBtn_li:last-child {
+  background: url(/assets/viewChangeIcon02.png) no-repeat center center #fff;
+}
+.chatIcon {
+  width: 48px;
+  height: 48px;
+  background: #162b3d url(/assets/chatIcon.png) no-repeat center center;
+  border-radius: 50%;
+  position: absolute;
+  top: 28px;
+  right: 0;
+  cursor: pointer;
+}
+
+
+.borderTopWhite {
+border-top: 4px solid #fff;
+}
+
+.sec01 {
+  padding: 20px 0;
+}
+.thingsList {
+  // width: 100%;
+  // border-collapse: collapse;
+  // border-spacing: 0 10px;
+  // border-collapse: separate;
+  font-size: 14px;
+}
+.thingsList__li {
+  height: 62px;
+  background: #fff;
+  border-radius: 4px;
+  border-left: 6px solid #01d4b9;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.thingsList__li + .thingsList__li {
+  margin-top: 12px;
+}
+.thingsList__li:first-child {
+  // color: transparent;
+  border-left: none;
+  background: none;
+  box-shadow: none;
+}
+.thingsList__li_child {
+  // float: left;
+  // display: flex;
+  // flex-grow: 1;
+  box-sizing: border-box;
+  text-align: center;
+  // position: relative;
+}
+.listView .inner {
+  width: 900px;
 }
 
 .addBtn {
-  width: 178px;
-  height: 36px;
-  background: #f48540;
-  border-radius: 18px;
-  box-shadow:2px 2px 3px 0px #ffffff inset,-2px -2px 3px 0px #ed6518 inset;
-  line-height: 36px;
+  width: 174px;
+  height: 38px;
+  background: #fd8439;
+  border-radius: 19px;
+  line-height: 38px;
   color: #fff;
   font-size: 14px;
   text-align: center;
-  padding-left: 16px;
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  margin-left: -89px;
+  padding: 0 16px;
   box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  // top: 120px;
+  // left: 50%;
+  // margin-left: -89px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
-.addBtn:before {
-  content: "+";
-  line-height: 20px;
-  color: #f48540;
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  background: #fff;
-  border-radius: 50%;
-  margin-top: -10px;
-}
-.user_info {
-  width: 162px;
-  height: 162px;
-  background: #54c6ad;
-  border-radius: 50%;
-  border: 4px solid #54c6ad;
-  position: absolute;
-  left: 50%;
-  top: 180px;
-  margin-left: -81px;
+
+ .thingsList__li_child_title {
+  width: 450px;
+  text-align: left;
   box-sizing: border-box;
-  overflow: hidden;
-  .user_info__name {
-    color: #000;
-    position: relative;
-    z-index: 10;
-    position: absolute;
-    bottom: 5px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-  }
-}
-.user_info:before {
-  content: "";
-  display: block;
-  width: 200%;
-  height: 200%;
-  background: image-url("tsuzuki.jpg") 90% 90px #fff;
-  background-size: contain;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 20%;
-  left: -50%;
-  box-sizing: border-box;
-}
+  padding-left: 30px;
+ }
+ .thingsList__li_child:nth-child(2),
+ .thingsList__li_child:nth-child(3),
+ .thingsList__li_child:nth-child(4) {
+  width: 150px;
+ }
 
-.thingsList .thingsList__li.metoo_5{
-  width: 234px;
-  height: 234px;
-  position: absolute;
-  left: 160px;
-  top: 40px;
-  border: 5px solid #fff;
-  animation-duration: 5s;
-  animation-delay: -1s;
-  .thingsList__title {
-    font-size: 14px;
-    line-height: 20px;
-    top: 80px;
-  }
+ .thingsList__li_child .sort {
+  position: relative;
+ }
+ .thingsList__li_child .sort:before {
+   content: "";
+   display: block;
+   width: 8px;
+   height: 5px;
+   background: url(/assets/sort_arrow_top.png);
+   position: absolute;
+   top: 0;
+   right: 0px;
+ }
+ .thingsList__li_child .sort:after {
+   content: "";
+   display: block;
+   width: 8px;
+   height: 5px;
+   background: url(/assets/sort_arrow_bottom.png);
+   position: absolute;
+   bottom: 0;
+   right: 0px;
+ }
+.thingsList__li_child_header {
+  padding-right: 16px;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
 }
-.thingsList .thingsList__li.metoo_4{
-  width: 212px;
-  height: 212px;
-  position: absolute;
-  left: 700px;
-  top: 80px;
-  border: 4px solid #fff;
-  animation-duration: 4s;
-  animation-delay: -3s;
-  .thingsList__title {
-    top: 70px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-}
-.thingsList .thingsList__li.metoo_3{
-  width: 190px;
-  height: 190px;
-  position: absolute;
-  left: 200px;
-  top: 300px;
-  border: 4px solid #fff;
-  animation-duration: 4s;
-  animation-delay: -1s;
-  .thingsList__title {
-    font-size: 12px;
-    line-height: 18px;
-    top: 65px;
-  }
-}
-.thingsList .thingsList__li.metoo_2{
-  width: 128px;
-  height: 128px;
-  position: absolute;
-  left: 700px;
-  top: 340px;
-  border: 3px solid #fff;
-  animation-duration: 3s;
-  animation-delay: -2s;
-  .thingsList__title {
-    font-size: 12px;
-    line-height: 16px;
-    top: 46px;
-  }
-}
-.thingsList .thingsList__li.metoo_1{
-  width: 60px;
-  height: 60px;
-  font-size: 12px;
-  line-height: 16px;
-  position: absolute;
-  left: 500px;
-  top: 380px;
-  animation-duration: 2s;
-  animation-delay: -2s;
-  &:before {
-    content: "";
-    display: none;
-  }
-  &:after {
-    content: "";
-    display: none;
-  }
-  .thingsList__title {
-    display: none;
-  }
-  .thingsList__subText {
-    display: none;
-  }
-}
-.thingsList__li {
-  width: 162px;
-  height: 162px;
-  background: #fff;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  position: absolute;
-  left: 200px;
-  top: 80px;
-  margin-left: -81px;
-  box-sizing: border-box;
-  overflow: hidden;
-  box-shadow: 0px 0px 1px 1px #efefef;
-
-  animation-duration: 4s;
-  animation-name: moveElem;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  .thingsList__title {
-    position: absolute;
-    top: 60px;
-    z-index: 10;
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
-    text-align: center;
-  }
-  .thingsList__subText {
-    position: absolute;
-    bottom: 4px;
-    z-index: 10;
-    width: 100%;
-    color: #f48540;
-    font-size: 14px;
-    text-align: center;
-  }
-}
-.thingsList__li:before {
-  content: "";
-  display: block;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(to right, #54c6ae 30%,#5245bb 80%);
-  background-size: contain;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 20%;
-  left: -50%;
-  box-sizing: border-box;
-}
-.thingsList__li:after {
-  content: "";
-  display: block;
-  width: 200%;
-  height: 200%;
-  background: image-url("tsuzuki.jpg") 90% 90px #fff;
-  background-size: contain;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 20%;
-  left: -50%;
-  box-sizing: border-box;
-  opacity: .2;
-}
-
-@keyframes moveElem {
-  0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(4px,6px);
-  }
-  100% {
-    transform: translate(0);
-  }
+.thingsList__li_child_header:hover {
+  color: #01d4b9;
 }
 
 
+/* .listView .content {*/
+/*   padding: 20px 0;*/
+/* }*/
+/* .listView .inner {*/
+/*   width: 900px;*/
+/* }*/
+/* .addBtn {*/
+/*   width: 174px;*/
+/*   height: 38px;*/
+/*   background: #fd8439;*/
+/*   border-radius: 19px;*/
+/*   line-height: 38px;*/
+/*   color: #fff;*/
+/*   font-size: 14px;*/
+/*   text-align: center;*/
+/*   padding: 0 16px;*/
+/*   box-sizing: border-box;*/
+/*   cursor: pointer;*/
+/*   display: inline-block;*/
+/*   // top: 120px;*/
+/*   // left: 50%;*/
+/*   // margin-left: -89px;*/
+/**/
+/* }*/
+/* .thingsList {*/
+/*   width: 100%;*/
+/*   // border-collapse: collapse;*/
+/*   border-spacing: 0 10px;*/
+/*   border-collapse: separate;*/
+/*   font-size: 14px;*/
+/* }*/
+/* .thingsList__li:first-child {*/
+/*   height: 62px;*/
+/*   background: transparent;*/
+/* }*/
+/* .thingsList__li {*/
+/*   height: 62px;*/
+/*   background: #fff;*/
+/*   border-radius: 3px;*/
+/*   box-shadow: 1px 2px 2px rgba(0,0,0,.4);*/
+/* }*/
+/* .thingsList__th {*/
+/*   font-size: 14px;*/
+/* }*/
+/* .thingsList__th.title {*/
+/*   width: 450px;*/
+/*   text-align: left;*/
+/*   box-sizing: border-box;*/
+/*   padding-left: 30px;*/
+/* }*/
+/* .thingsList__th .sort {*/
+/*   position: relative;*/
+/* }*/
 
-.sideList {
-  .sideList_li + .sideList_li {
-    margin-top: 1px;
-  }
-  .sideList_a {
-    width: 160px;
-    line-height: 36px;
-    display: block;
-    background: #fff;
-    border: 2px solid #54c6ad;
-    border-radius: 4px;
-    color: #54c6ad;
-    font-size: 14px;
-    padding-left: 10px;
-    box-sizing: border-box;
-  }
-  .sideList_a.active {
-    background: #54c6ad;
-    color: #fff;
-  }
-}
-.sidebar {
-  // position: absolute;
-  // top: 10px;
-  // right: 0;
-  padding-top: 20px;
-  display: block;
-  width: 160px;
-  margin: 0 0 0 auto;
-}
+
+/* .thingsList__td {*/
+/*   text-align: center;*/
+/**/
+/* }*/
+/* .thingsList__td.title {*/
+/*   width: 450px;*/
+/*   text-align: left;*/
+/*   box-sizing: border-box;*/
+/*   padding-left: 30px;*/
+/*   border-left: 6px solid #01d4b9;*/
+/*   // border-radius:*/
+/*   border-radius: 4px 0 0 4px;*/
+/* }*/
+/* .thingsList__td.metoo {*/
+/*   border-radius: 0 4px 4px 0;*/
+/* }*/
+/* .thingsList__td.passion {*/
+/*   color: #01d4b9;*/
+/* }*/

@@ -3,13 +3,13 @@
 # Table name: users
 #
 #  id               :integer          not null, primary key
-#  name             :string(255)
-#  email            :string(255)
-#  image_path       :string(255)
-#  background_image :string(255)
+#  name             :string
+#  email            :string
+#  image_path       :string
+#  background_image :string
 #  gender           :integer
 #  age              :integer
-#  address          :string(255)
+#  address          :string
 #  delete_flag      :boolean
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

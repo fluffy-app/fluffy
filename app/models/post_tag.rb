@@ -13,11 +13,6 @@
 #  index_post_tags_on_post_id  (post_id)
 #  index_post_tags_on_tag_id   (tag_id)
 #
-# Foreign Keys
-#
-#  fk_rails_c9d8c5063e  (tag_id => tags.id)
-#  fk_rails_fdf74b486b  (post_id => posts.id)
-#
 
 class PostTag < ActiveRecord::Base
   belongs_to :post, :foreign_key => :post_id
